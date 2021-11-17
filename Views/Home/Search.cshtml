@@ -1,0 +1,29 @@
+﻿@model Donut
+
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h1>Search Results for ID of @Model.Id:</h1>
+
+<h4>Name: @Model.Name</h4>
+<h4>Calories: @Model.Calories</h4>
+@if (Model.Photo != null)
+{
+<div>
+    <img src="@Model.Photo" alt="Image" width="500" />
+</div>
+    
+}
+@if (Model.Extras != null && Model.Extras.Length != 0)
+{
+    <h4>Extras:</h4>
+    @foreach (string s in Model.Extras)
+    {
+        <h5> - @s</h5>
+    }
+}
+
+
+
+
